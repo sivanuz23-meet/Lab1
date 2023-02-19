@@ -10,12 +10,20 @@
 
 
     <TextView
-        android:id="@+id/SignIn"
+        android:id="@+id/Sign"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
         android:textSize="30sp"
-        android:text="Sign In" />
+        android:text="Sign Up" />
+    <EditText
+        android:id="@+id/name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:hint="Name"
+        android:inputType="textPassword"/>
+
     <EditText
         android:id="@+id/email"
         android:layout_width="match_parent"
@@ -36,15 +44,6 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
-        <Button
-            android:id="@+id/login"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:layout_margin="10dp"
-            android:background="@drawable/button"
-
-            android:text="Login" />
         <Button
             android:id="@+id/SignUp"
             android:layout_width="match_parent"
