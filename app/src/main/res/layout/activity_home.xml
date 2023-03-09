@@ -17,4 +17,9 @@
         android:textSize="30sp"
         android:text="Welcome to our App!" />
 
+    <ListView
+        android:id = "@+id/user_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
 </LinearLayout>

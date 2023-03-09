@@ -12,6 +12,12 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class MainActivity extends AppCompatActivity implements View.OnCapturedPointerListener, View.OnClickListener {
     private TextView SignIn;
@@ -19,6 +25,7 @@ public class MainActivity extends AppCompatActivity implements View.OnCapturedPo
     private EditText password;
     private Button login;
     private Button SignUp;
+    private FirebaseAuth mAuth;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,7 +35,8 @@ public class MainActivity extends AppCompatActivity implements View.OnCapturedPo
         password= findViewById(R.id.password);
         login= findViewById(R.id.login);
         SignUp= findViewById(R.id.SignUp);
-        //login.setOnClickListener(this);
+        mAuth = FirebaseAuth.getInstance();
+        login.setOnClickListener(this);
         SignUp.setOnClickListener(this);
     }
 
@@ -54,6 +62,24 @@ public class MainActivity extends AppCompatActivity implements View.OnCapturedPo
         else if (view==SignUp){
             startActivity(intentSignUp);
         }
+    }
+
+    public void signin_user(String email, String password){
+        mAuth.signInWithEmailAndPassword(email, password)
+                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        if (task.isSuccessful()) {
+                            // Sign in success, update UI with the signed-in user's information
+                            Intent i = new Intent(MainActivity.this, HomeActivity.class);
+                            startActivity(i);
+                        } else {
+                            // If sign in fails, display a message to the user.
+                            Toast.makeText(MainActivity.this, "Authentication failed.",
+                                    Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                });
     }
 
 

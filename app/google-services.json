@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "845495181706",
+    "firebase_url": "https://android-studio-labs-default-rtdb.firebaseio.com",
+    "project_id": "android-studio-labs",
+    "storage_bucket": "android-studio-labs.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:845495181706:android:6b6ba7e3feabfc277d6873",
+        "android_client_info": {
+          "package_name": "com.example.lab1"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "845495181706-he030tkps2m8pjrt0vikvbk9e0et2ge8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDLXzJn1tL5_Yq1IMisjvrukO_HSOFCm0Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "845495181706-he030tkps2m8pjrt0vikvbk9e0et2ge8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
